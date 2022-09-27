@@ -1137,6 +1137,14 @@ To train the model, run
 ```bash
 jaseci > jac run tfm_ner.jac -walk train -ctx "{\"train_file\": \"ner_train.json\"}"
 ```
+Don't forget to save this model:
+```bash
+jaseci > jac run tfm_ner.jac -walk save_model -ctx "{\"model_path\": \"tfm_ner_model\"}"
+```
+and load if you exited `jsctl`:
+```bash
+jaseci > jac run tfm_ner.jac -walk load_model -ctx "{\"model_path\": \"tfm_ner_model\"}"
+```
 After the model is finished training, you can play with the model using the `infer` walker
 ```js
 jaseci > jac run tfm_ner.jac -walk infer
